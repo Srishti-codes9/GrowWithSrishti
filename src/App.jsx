@@ -12,7 +12,7 @@ export default function App() {
   const [open, setOpen] = useState(false);
 
   const calendlyUrl = "https://calendly.com/connect-and-grow-with-srishti/30min";
-  //const whatsappUrl = "https://wa.me/91XXXXXXXXXX";
+  const whatsappUrl = "https://wa.me/91XXXXXXXXXX";
 
   return (
     <div style={styles.page}>
