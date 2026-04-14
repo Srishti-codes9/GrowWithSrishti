@@ -20,8 +20,8 @@ export default function App() {
       <header style={styles.header}>
         <h1>Grow with Srishti</h1>
         <p>
-          Career guidance, mock interviews, and real‑world mentoring in
-          Embedded Systems & Model‑Based Development
+          CV writing, LinkedIn branding, mock interviews and personalized career paths
+          for students and professionals
         </p>
 
         <button style={styles.button} onClick={() => setOpen(true)}>
