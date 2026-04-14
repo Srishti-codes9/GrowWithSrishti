@@ -11,8 +11,8 @@ import {
 export default function App() {
   const [open, setOpen] = useState(false);
 
-  const calendlyUrl = "https://calendly.com/your-name/free-intro-call";
-  const whatsappUrl = "https://wa.me/91XXXXXXXXXX";
+  const calendlyUrl = "https://calendly.com/connect-and-grow-with-srishti/30min";
+  //const whatsappUrl = "https://wa.me/91XXXXXXXXXX";
 
   return (
     <div style={styles.page}>
