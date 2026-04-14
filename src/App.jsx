@@ -18,12 +18,14 @@ export default function App() {
     <div style={styles.page}>
       {/* HERO */}
       <header style={styles.header}>
-        <h1>Grow with Srishti</h1>
-        <p>
-          CV writing, LinkedIn branding, mock interviews and personalized career paths
-          for students and professionals
-        </p>
-
+        <h1 style={{ fontSize: "2.8rem", fontWeight: "800", marginBottom: "1rem" }}>
+  Grow with Srishti
+</h1>
+        
+<p style={{ maxWidth: "720px", margin: "0 auto", opacity: 0.95 }}>
+  CV writing, LinkedIn branding, mock interviews and personalized career paths
+  for students and professionals
+</p>
         <button style={styles.button} onClick={() => setOpen(true)}>
           Book a Free Intro Call
         </button>
