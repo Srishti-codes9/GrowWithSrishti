@@ -45,14 +45,36 @@ export default function App() {
     }}
   >
     Join my <strong>FREE WhatsApp channel</strong> for daily career tips <br />
-    <a
-      href="https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W"
-      target="_blank"
-      rel="noreferrer"
-      style={{ color: "#25D366", textDecoration: "none" }}
-    >
-      Join Grow with Srishti on WhatsApp →
-    </a>
+   <a
+  href="https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W"
+  target="_blank"
+  rel="noreferrer"
+  style={{
+    display: "inline-block",
+    marginTop: "1.2rem",
+    padding: "0.9rem 1.6rem",
+    backgroundColor: "#4f46e5",
+    color: "white",
+    borderRadius: "12px",
+    fontSize: "1.05rem",
+    fontWeight: "700",
+    textDecoration: "none",
+    boxShadow: "0 8px 20px rgba(79,70,229,0.35)",
+    transition: "transform 0.2s ease, box-shadow 0.2s ease"
+  }}
+  onMouseEnter={e => {
+    e.currentTarget.style.transform = "translateY(-2px)";
+    e.currentTarget.style.boxShadow =
+      "0 12px 28px rgba(79,70,229,0.45)";
+  }}
+  onMouseLeave={e => {
+    e.currentTarget.style.transform = "translateY(0)";
+    e.currentTarget.style.boxShadow =
+      "0 8px 20px rgba(79,70,229,0.35)";
+  }}
+>
+  🚀 Join my FREE WhatsApp channel for daily career tips →
+</a>
   </p>
 </header>
 
