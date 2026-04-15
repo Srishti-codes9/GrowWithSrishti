@@ -37,14 +37,6 @@ export default function App() {
 
   {/* WHATSAPP CHANNEL CTA */}
   <p
-    style={{
-      marginTop: "0.9rem",
-      fontSize: "0.95rem",
-      fontWeight: "500",
-      color: "#111827"
-    }}
-  >
-    Join my <strong>FREE WhatsApp channel</strong> for daily career tips <br />
  <a
   href="https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W"
   target="_blank"
