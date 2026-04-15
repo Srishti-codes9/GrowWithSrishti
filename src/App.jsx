@@ -36,8 +36,7 @@ export default function App() {
   </p>
 
   {/* WHATSAPP CHANNEL CTA */}
-  <p
- <a
+<a
   href="https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W"
   target="_blank"
   rel="noreferrer"
