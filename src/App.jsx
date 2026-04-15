@@ -17,21 +17,44 @@ export default function App() {
   return (
     <div style={styles.page}>
       {/* HERO */}
-      <header style={styles.header}>
-        <h1 style={{ fontSize: "2.8rem", fontWeight: "800", marginBottom: "1rem" }}>
-  Grow with Srishti
-</h1>
-        
-<p style={{ maxWidth: "720px", margin: "0 auto", opacity: 0.95 }}>
-  CV writing, LinkedIn branding, mock interviews and personalized career paths
-  for students and professionals
-</p>
-        <button style={styles.button} onClick={() => setOpen(true)}>
-          Book a Free Intro Call
-        </button>
+    <header style={styles.header}>
+  <h1 style={{ fontSize: "2.8rem", fontWeight: "800", marginBottom: "1rem" }}>
+    Grow with Srishti
+  </h1>
 
-        <p style={styles.subtext}>30‑minute discovery call • No obligation</p>
-      </header>
+  <p style={{ maxWidth: "720px", margin: "0 auto", opacity: 0.95 }}>
+    CV writing, LinkedIn branding, mock interviews and personalized career paths
+    for students and professionals
+  </p>
+
+  <button style={styles.button} onClick={() => setOpen(true)}>
+    Book a Free Intro Call
+  </button>
+
+  <p style={styles.subtext}>
+    30‑minute discovery call • No obligation
+  </p>
+
+  {/* WHATSAPP CHANNEL CTA */}
+  <p
+    style={{
+      marginTop: "0.9rem",
+      fontSize: "0.95rem",
+      fontWeight: "500",
+      color: "#111827"
+    }}
+  >
+    Join my <strong>FREE WhatsApp channel</strong> for daily career tips <br />
+    <a
+      href="https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W"
+      target="_blank"
+      rel="noreferrer"
+      style={{ color: "#25D366", textDecoration: "none" }}
+    >
+      Join Grow with Srishti on WhatsApp →
+    </a>
+  </p>
+</header>
 
       {/* TARGET AUDIENCE */}
       <section style={styles.grid}>
