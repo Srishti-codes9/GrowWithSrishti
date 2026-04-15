@@ -69,7 +69,6 @@ export default function App() {
   <MessageCircle size={22} />
   Join my FREE WhatsApp channel for daily career tips →
 </a>
-  </p>
 </header>
 
       {/* TARGET AUDIENCE */}
