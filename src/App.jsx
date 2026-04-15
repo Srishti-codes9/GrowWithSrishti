@@ -45,35 +45,38 @@ export default function App() {
     }}
   >
     Join my <strong>FREE WhatsApp channel</strong> for daily career tips <br />
-   <a
+ <a
   href="https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W"
   target="_blank"
   rel="noreferrer"
   style={{
-    display: "inline-block",
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.6rem",
     marginTop: "1.2rem",
     padding: "0.9rem 1.6rem",
-    backgroundColor: "#4f46e5",
+    borderRadius: "999px",
+    backgroundColor: "#25D366", // WhatsApp green
     color: "white",
-    borderRadius: "12px",
     fontSize: "1.05rem",
     fontWeight: "700",
     textDecoration: "none",
-    boxShadow: "0 8px 20px rgba(79,70,229,0.35)",
+    boxShadow: "0 8px 20px rgba(37, 211, 102, 0.4)",
     transition: "transform 0.2s ease, box-shadow 0.2s ease"
   }}
   onMouseEnter={e => {
     e.currentTarget.style.transform = "translateY(-2px)";
     e.currentTarget.style.boxShadow =
-      "0 12px 28px rgba(79,70,229,0.45)";
+      "0 12px 28px rgba(37, 211, 102, 0.6)";
   }}
   onMouseLeave={e => {
     e.currentTarget.style.transform = "translateY(0)";
     e.currentTarget.style.boxShadow =
-      "0 8px 20px rgba(79,70,229,0.35)";
+      "0 8px 20px rgba(37, 211, 102, 0.4)";
   }}
 >
-  🚀 Join my FREE WhatsApp channel for daily career tips →
+  <MessageCircle size={22} />
+  Join my FREE WhatsApp channel for daily career tips →
 </a>
   </p>
 </header>
