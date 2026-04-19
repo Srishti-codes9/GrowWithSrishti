@@ -4,110 +4,100 @@ import {
   Cpu,
   Briefcase,
   Users,
-  X,
   MessageCircle
 } from "lucide-react";
 
 export default function App() {
-  const [open, setOpen] = useState(false);
+  const calendlyUrl =
+    "https://calendly.com/connect-and-grow-with-srishti/30min";
 
-  const calendlyUrl = "https://calendly.com/connect-and-grow-with-srishti/30min";
-  const whatsappUrl = "https://wa.me/91XXXXXXXXXX";
+  const whatsappUrl = "https://wa.me/919425379894";
+  const whatsappChannelUrl =
+    "https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W";
 
   return (
     <div style={styles.page}>
       {/* HERO */}
-    <header style={styles.header}>
-  <h1 style={{ fontSize: "2.8rem", fontWeight: "800", marginBottom: "1rem" }}>
-    Grow with Srishti
-  </h1>
+      <header style={styles.header}>
+        <h1 style={styles.title}>Grow with Srishti</h1>
 
-  <p style={{ maxWidth: "720px", margin: "0 auto", opacity: 0.95 }}>
-    CV writing, LinkedIn branding, mock interviews and personalized career paths
-    for students and professionals
-  </p>
+        <p style={styles.subtitle}>
+          CV writing, LinkedIn branding, mock interviews and personalized career
+          paths for students and professionals
+        </p>
 
-  <button style={styles.button} onClick={() => setOpen(true)}>
-    Book a Free Intro Call
-  </button>
+        {/* MAIN CTA */}
+        <a href={calendlyUrl} target="_blank" rel="noreferrer">
+          <button style={styles.buttonPrimary}>
+            Book a Free Strategy Call
+          </button>
+        </a>
 
-  <p style={styles.subtext}>
-    30‑minute discovery call • No obligation
-  </p>
+        <p style={styles.subtext}>
+          30‑minute discovery call • No obligation
+        </p>
 
-  {/* WHATSAPP CHANNEL CTA */}
-<a
-  href="https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W"
-  target="_blank"
-  rel="noreferrer"
-  style={{
-    display: "inline-flex",
-    alignItems: "center",
-    gap: "0.6rem",
-    marginTop: "1.2rem",
-    padding: "0.9rem 1.6rem",
-    borderRadius: "999px",
-    backgroundColor: "#25D366", // WhatsApp green
-    color: "white",
-    fontSize: "1.05rem",
-    fontWeight: "700",
-    textDecoration: "none",
-    boxShadow: "0 8px 20px rgba(37, 211, 102, 0.4)",
-    transition: "transform 0.2s ease, box-shadow 0.2s ease"
-  }}
-  onMouseEnter={e => {
-    e.currentTarget.style.transform = "translateY(-2px)";
-    e.currentTarget.style.boxShadow =
-      "0 12px 28px rgba(37, 211, 102, 0.6)";
-  }}
-  onMouseLeave={e => {
-    e.currentTarget.style.transform = "translateY(0)";
-    e.currentTarget.style.boxShadow =
-      "0 8px 20px rgba(37, 211, 102, 0.4)";
-  }}
->
-  <MessageCircle size={22} />
-  Join my FREE WhatsApp channel for daily career tips →
-</a>
-</header>
+        {/* WHATSAPP CHANNEL CTA */}
+        <a
+          href={whatsappChannelUrl}
+          target="_blank"
+          rel="noreferrer"
+          style={styles.whatsappChannel}
+        >
+          <MessageCircle size={22} />
+          Join my FREE WhatsApp channel →
+        </a>
+      </header>
 
       {/* TARGET AUDIENCE */}
       <section style={styles.grid}>
-        <Card title="School Students" icon={<GraduationCap />} />
-        <Card title="College Students" icon={<Cpu />} />
-        <Card title="Early Professionals" icon={<Briefcase />} />
-        <Card title="Mid‑Career" icon={<Users />} />
+        <Card
+          title="School Students"
+          icon={<GraduationCap />}
+          link={calendlyUrl}
+        />
+        <Card
+          title="College Students"
+          icon={<Cpu />}
+          link={calendlyUrl}
+        />
+        <Card
+          title="Early Professionals"
+          icon={<Briefcase />}
+          link={calendlyUrl}
+        />
+        <Card
+          title="Mid‑Career Professionals"
+          icon={<Users />}
+          link={calendlyUrl}
+        />
+      </section>
+
+      {/* CTA SECTION */}
+      <section style={styles.cta}>
+        <h2 style={{ marginBottom: "1rem" }}>
+          Ready to Lead the Technical Frontier?
+        </h2>
+
+        <a href={calendlyUrl} target="_blank" rel="noreferrer">
+          <button style={styles.buttonPrimary}>
+            Book Consultation
+          </button>
+        </a>
       </section>
 
       {/* FOOTER */}
       <footer style={styles.footer}>
-        © 2026 Grow with Srishti • Built for LinkedIn audience
+        © 2026 Grow with Srishti • Built for career‑focused professionals
       </footer>
 
-      {/* MODAL */}
-      {open && (
-        <div style={styles.modalOverlay}>
-          <div style={styles.modal}>
-            <button style={styles.close} onClick={() => setOpen(false)}>
-              <X />
-            </button>
-            <h3>Book a Free Intro Call</h3>
-            <p>
-              Share your background and goals. I’ll help you decide next steps.
-            </p>
-            <a href={calendlyUrl} target="_blank" rel="noreferrer">
-              <button style={styles.button}>Open Calendar</button>
-            </a>
-          </div>
-        </div>
-      )}
-
-      {/* WHATSAPP */}
+      {/* FLOATING WHATSAPP */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
         style={styles.whatsapp}
+        aria-label="Chat on WhatsApp"
       >
         <MessageCircle />
       </a>
@@ -115,79 +105,106 @@ export default function App() {
   );
 }
 
-function Card({ title, icon }) {
+/* CARD COMPONENT */
+function Card({ title, icon, link }) {
   return (
-    <div style={styles.card}>
-      <div style={{ marginBottom: "0.5rem" }}>{icon}</div>
-      <h3>{title}</h3>
-    </div>
+    <a href={link} target="_blank" rel="noreferrer" style={styles.cardLink}>
+      <div style={styles.card}>
+        <div style={{ marginBottom: "0.6rem" }}>{icon}</div>
+        <h3>{title}</h3>
+        <p style={styles.cardHint}>Book mentoring →</p>
+      </div>
+    </a>
   );
 }
 
+/* STYLES */
 const styles = {
   page: {
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "Inter, system-ui, sans-serif",
     padding: "2rem",
     maxWidth: "1000px",
     margin: "auto"
   },
   header: {
     textAlign: "center",
-    marginBottom: "2.5rem"
+    marginBottom: "3rem"
   },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-    gap: "1.2rem"
+  title: {
+    fontSize: "2.8rem",
+    fontWeight: "800",
+    marginBottom: "1rem"
   },
-  card: {
-    padding: "1.2rem",
-    border: "1px solid #e5e7eb",
-    borderRadius: "14px",
-    textAlign: "center"
+  subtitle: {
+    maxWidth: "720px",
+    margin: "0 auto 1.6rem",
+    opacity: 0.9
   },
-  button: {
-    padding: "0.8rem 1.4rem",
+  buttonPrimary: {
+    padding: "0.9rem 1.6rem",
     borderRadius: "14px",
     border: "none",
     background: "#4f46e5",
     color: "white",
     fontSize: "1rem",
+    fontWeight: "700",
     cursor: "pointer"
   },
   subtext: {
-    marginTop: "0.5rem",
+    marginTop: "0.6rem",
     fontSize: "0.85rem",
     color: "#6b7280"
   },
+  whatsappChannel: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.6rem",
+    marginTop: "1.2rem",
+    padding: "0.9rem 1.6rem",
+    borderRadius: "999px",
+    backgroundColor: "#25D366",
+    color: "white",
+    fontSize: "1rem",
+    fontWeight: "700",
+    textDecoration: "none",
+    boxShadow: "0 8px 20px rgba(37, 211, 102, 0.4)"
+  },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+    gap: "1.4rem",
+    marginBottom: "3rem"
+  },
+  cardLink: {
+    textDecoration: "none",
+    color: "inherit"
+  },
+  card: {
+    padding: "1.6rem",
+    border: "1px solid #e5e7eb",
+    borderRadius: "16px",
+    textAlign: "center",
+    cursor: "pointer",
+    transition: "transform 0.2s ease"
+  },
+  cardHint: {
+    marginTop: "0.4rem",
+    fontSize: "0.85rem",
+    color: "#4f46e5",
+    fontWeight: "600"
+  },
+  cta: {
+    background: "linear-gradient(135deg, #1e3a8a, #4f46e5)",
+    color: "white",
+    padding: "3rem 2rem",
+    textAlign: "center",
+    borderRadius: "22px",
+    marginBottom: "3rem"
+  },
   footer: {
-    marginTop: "3rem",
     textAlign: "center",
     color: "#6b7280",
     fontSize: "0.9rem"
-  },
-  modalOverlay: {
-    position: "fixed",
-    inset: 0,
-    background: "rgba(0,0,0,0.4)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  modal: {
-    background: "white",
-    padding: "1.5rem",
-    borderRadius: "16px",
-    width: "320px",
-    position: "relative"
-  },
-  close: {
-    position: "absolute",
-    top: "10px",
-    right: "10px",
-    background: "none",
-    border: "none",
-    cursor: "pointer"
   },
   whatsapp: {
     position: "fixed",
@@ -196,6 +213,7 @@ const styles = {
     background: "#25D366",
     color: "white",
     padding: "14px",
-    borderRadius: "50%"
+    borderRadius: "50%",
+    boxShadow: "0 10px 28px rgba(37,211,102,0.4)"
   }
 };
