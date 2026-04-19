@@ -6,13 +6,15 @@ import {
   MessageCircle
 } from "lucide-react";
 
-export default function App() {
-  const calendly =
-    "https://calendly.com/connect-and-grow-with-srishti/30min";
-  const whatsappChat = "https://wa.me/919425379894";
-  const whatsappChannel =
-    "https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W";
+const CALENDLY =
+  "https://calendly.com/connect-and-grow-with-srishti/30min";
 
+const WHATSAPP_CHAT = "https://wa.me/919425379894";
+
+const WHATSAPP_CHANNEL =
+  "https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W";
+
+export default function App() {
   return (
     <div style={styles.page}>
       {/* HERO */}
@@ -24,8 +26,12 @@ export default function App() {
           paths for students and professionals
         </p>
 
-        {/* CALENDLY BUTTON */}
-        {calendly}
+        {/* ✅ BOOK STRATEGY CALL */}
+        <a
+          href={CALENDLY}
+          target="_blank"
+          rel="noreferrer"
+        >
           <button style={styles.buttonPrimary}>
             Book a Free Strategy Call
           </button>
@@ -35,26 +41,47 @@ export default function App() {
           30‑minute discovery call • No obligation
         </p>
 
-        {/* WHATSAPP CHANNEL */}
-        {whatsappChannel}
+        {/* ✅ WHATSAPP CHANNEL */}
+        <a
+          href={WHATSAPP_CHANNEL}
+          target="_blank"
+          rel="noreferrer"
+          style={styles.whatsappChannel}
+        >
           <MessageCircle size={22} />
           Join my FREE WhatsApp channel →
         </a>
       </header>
 
-      {/* AUDIENCE CARDS */}
+      {/* TARGET AUDIENCE */}
       <section style={styles.grid}>
-        <AudienceCard title="School Students" icon={<GraduationCap />} link={calendly} />
-        <AudienceCard title="College Students" icon={<Cpu />} link={calendly} />
-        <AudienceCard title="Early Professionals" icon={<Briefcase />} link={calendly} />
-        <AudienceCard title="Mid‑Career Professionals" icon={<Users />} link={calendly} />
+        <AudienceCard
+          title="School Students"
+          icon={<GraduationCap />}
+        />
+        <AudienceCard
+          title="College Students"
+          icon={<Cpu />}
+        />
+        <AudienceCard
+          title="Early Professionals"
+          icon={<Briefcase />}
+        />
+        <AudienceCard
+          title="Mid‑Career Professionals"
+          icon={<Users />}
+        />
       </section>
 
       {/* CTA */}
       <section style={styles.cta}>
         <h2>Ready to Lead the Technical Frontier?</h2>
 
-        {calendly}
+        <a
+          href={CALENDLY}
+          target="_blank"
+          rel="noreferrer"
+        >
           <button style={styles.buttonPrimary}>
             Book Consultation
           </button>
@@ -66,20 +93,30 @@ export default function App() {
         © 2026 Grow with Srishti
       </footer>
 
-      {/* FLOATING WHATSAPP CHAT */}
-      {whatsappChat}
-        <MessageCircle size={24} />
+      {/* ✅ FLOATING WHATSAPP CHAT */}
+      <a
+        href={WHATSAPP_CHAT}
+        target="_blank"
+        rel="noreferrer"
+        style={styles.whatsappFloating}
+      >
+        <MessageCircle size={26} />
       </a>
     </div>
   );
 }
 
-/* CARD */
-function AudienceCard({ title, icon, link }) {
+/* CARD COMPONENT */
+function AudienceCard({ title, icon }) {
   return (
-    {link}
+    <a
+      href={CALENDLY}
+      target="_blank"
+      rel="noreferrer"
+      style={styles.cardLink}
+    >
       <div style={styles.card}>
-        <div>{icon}</div>
+        <div style={{ marginBottom: "0.5rem" }}>{icon}</div>
         <h3>{title}</h3>
         <span style={styles.cardHint}>Book mentoring →</span>
       </div>
@@ -90,9 +127,9 @@ function AudienceCard({ title, icon, link }) {
 /* STYLES */
 const styles = {
   page: {
-    fontFamily: "system-ui, sans-serif",
+    fontFamily: "Inter, system-ui, sans-serif",
     padding: "2rem",
-    maxWidth: "1000px",
+    maxWidth: "1100px",
     margin: "auto"
   },
   header: {
@@ -101,11 +138,12 @@ const styles = {
   },
   title: {
     fontSize: "2.8rem",
-    fontWeight: 800
+    fontWeight: 800,
+    marginBottom: "1rem"
   },
   subtitle: {
-    margin: "1rem auto",
-    maxWidth: "700px",
+    maxWidth: "720px",
+    margin: "0 auto 1.6rem",
     opacity: 0.9
   },
   buttonPrimary: {
@@ -119,19 +157,20 @@ const styles = {
     cursor: "pointer"
   },
   subtext: {
-    marginTop: "0.5rem",
+    marginTop: "0.6rem",
     fontSize: "0.85rem",
     color: "#6b7280"
   },
   whatsappChannel: {
-    marginTop: "1.5rem",
     display: "inline-flex",
     alignItems: "center",
     gap: "0.6rem",
-    padding: "0.8rem 1.4rem",
+    marginTop: "1.4rem",
+    padding: "0.9rem 1.6rem",
     background: "#25D366",
     borderRadius: "999px",
     color: "white",
+    fontSize: "1rem",
     fontWeight: 700,
     textDecoration: "none"
   },
@@ -153,6 +192,8 @@ const styles = {
     cursor: "pointer"
   },
   cardHint: {
+    display: "block",
+    marginTop: "0.4rem",
     fontSize: "0.85rem",
     color: "#4f46e5",
     fontWeight: 600
@@ -167,16 +208,17 @@ const styles = {
   },
   footer: {
     textAlign: "center",
-    color: "#6b7280"
+    color: "#6b7280",
+    fontSize: "0.9rem"
   },
   whatsappFloating: {
     position: "fixed",
-    bottom: "20px",
-    right: "20px",
+    bottom: "24px",
+    right: "24px",
     background: "#25D366",
     color: "white",
     padding: "16px",
     borderRadius: "50%",
-    boxShadow: "0 10px 25px rgba(37,211,102,0.5)"
+    boxShadow: "0 10px 25px rgba(37,211,102,0.45)"
   }
 };
