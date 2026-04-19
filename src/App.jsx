@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   GraduationCap,
   Cpu,
@@ -51,26 +50,10 @@ export default function App() {
 
       {/* TARGET AUDIENCE */}
       <section style={styles.grid}>
-        <Card
-          title="School Students"
-          icon={<GraduationCap />}
-          link={calendlyUrl}
-        />
-        <Card
-          title="College Students"
-          icon={<Cpu />}
-          link={calendlyUrl}
-        />
-        <Card
-          title="Early Professionals"
-          icon={<Briefcase />}
-          link={calendlyUrl}
-        />
-        <Card
-          title="Mid‑Career Professionals"
-          icon={<Users />}
-          link={calendlyUrl}
-        />
+        <Card title="School Students" icon={<GraduationCap />} link={calendlyUrl} />
+        <Card title="College Students" icon={<Cpu />} link={calendlyUrl} />
+        <Card title="Early Professionals" icon={<Briefcase />} link={calendlyUrl} />
+        <Card title="Mid‑Career Professionals" icon={<Users />} link={calendlyUrl} />
       </section>
 
       {/* CTA SECTION */}
@@ -97,7 +80,6 @@ export default function App() {
         target="_blank"
         rel="noreferrer"
         style={styles.whatsapp}
-        aria-label="Chat on WhatsApp"
       >
         <MessageCircle />
       </a>
