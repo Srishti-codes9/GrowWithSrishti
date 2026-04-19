@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 export default function App() {
-  const calendlyUrl =
+  const calendly =
     "https://calendly.com/connect-and-grow-with-srishti/30min";
   const whatsappChat = "https://wa.me/919425379894";
   const whatsappChannel =
@@ -24,13 +24,8 @@ export default function App() {
           paths for students and professionals
         </p>
 
-        {/* BOOK STRATEGY CALL */}
-        <a
-          href={calendlyUrl}
-          target="_blank"
-          rel="noreferrer"
-          style={{ textDecoration: "none" }}
-        >
+        {/* CALENDLY BUTTON */}
+        {calendly}
           <button style={styles.buttonPrimary}>
             Book a Free Strategy Call
           </button>
@@ -40,36 +35,26 @@ export default function App() {
           30‑minute discovery call • No obligation
         </p>
 
-        {/* WHATSAPP CHANNEL CTA */}
-        <a
-          href={whatsappChannel}
-          target="_blank"
-          rel="noreferrer"
-          style={styles.whatsappChannel}
-        >
+        {/* WHATSAPP CHANNEL */}
+        {whatsappChannel}
           <MessageCircle size={22} />
           Join my FREE WhatsApp channel →
         </a>
       </header>
 
-      {/* TARGET AUDIENCE */}
+      {/* AUDIENCE CARDS */}
       <section style={styles.grid}>
-        <AudienceCard title="School Students" icon={<GraduationCap />} link={calendlyUrl} />
-        <AudienceCard title="College Students" icon={<Cpu />} link={calendlyUrl} />
-        <AudienceCard title="Early Professionals" icon={<Briefcase />} link={calendlyUrl} />
-        <AudienceCard title="Mid‑Career Professionals" icon={<Users />} link={calendlyUrl} />
+        <AudienceCard title="School Students" icon={<GraduationCap />} link={calendly} />
+        <AudienceCard title="College Students" icon={<Cpu />} link={calendly} />
+        <AudienceCard title="Early Professionals" icon={<Briefcase />} link={calendly} />
+        <AudienceCard title="Mid‑Career Professionals" icon={<Users />} link={calendly} />
       </section>
 
-      {/* CTA SECTION */}
+      {/* CTA */}
       <section style={styles.cta}>
         <h2>Ready to Lead the Technical Frontier?</h2>
 
-        <a
-          href={calendlyUrl}
-          target="_blank"
-          rel="noreferrer"
-          style={{ textDecoration: "none" }}
-        >
+        {calendly}
           <button style={styles.buttonPrimary}>
             Book Consultation
           </button>
@@ -78,17 +63,12 @@ export default function App() {
 
       {/* FOOTER */}
       <footer style={styles.footer}>
-        © 2026 Grow with Srishti • Built for career‑focused professionals
+        © 2026 Grow with Srishti
       </footer>
 
       {/* FLOATING WHATSAPP CHAT */}
-      <a
-        href={whatsappChat}
-        target="_blank"
-        rel="noreferrer"
-        style={styles.whatsappFloating}
-      >
-        <MessageCircle size={26} />
+      {whatsappChat}
+        <MessageCircle size={24} />
       </a>
     </div>
   );
@@ -97,14 +77,9 @@ export default function App() {
 /* CARD */
 function AudienceCard({ title, icon, link }) {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noreferrer"
-      style={styles.cardLink}
-    >
+    {link}
       <div style={styles.card}>
-        {icon}
+        <div>{icon}</div>
         <h3>{title}</h3>
         <span style={styles.cardHint}>Book mentoring →</span>
       </div>
@@ -115,7 +90,7 @@ function AudienceCard({ title, icon, link }) {
 /* STYLES */
 const styles = {
   page: {
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "system-ui, sans-serif",
     padding: "2rem",
     maxWidth: "1000px",
     margin: "auto"
@@ -129,8 +104,8 @@ const styles = {
     fontWeight: 800
   },
   subtitle: {
-    maxWidth: "720px",
-    margin: "1rem auto 1.5rem",
+    margin: "1rem auto",
+    maxWidth: "700px",
     opacity: 0.9
   },
   buttonPrimary: {
@@ -149,10 +124,10 @@ const styles = {
     color: "#6b7280"
   },
   whatsappChannel: {
+    marginTop: "1.5rem",
     display: "inline-flex",
     alignItems: "center",
     gap: "0.6rem",
-    marginTop: "1.2rem",
     padding: "0.8rem 1.4rem",
     background: "#25D366",
     borderRadius: "999px",
@@ -178,8 +153,6 @@ const styles = {
     cursor: "pointer"
   },
   cardHint: {
-    display: "block",
-    marginTop: "0.4rem",
     fontSize: "0.85rem",
     color: "#4f46e5",
     fontWeight: 600
@@ -194,8 +167,7 @@ const styles = {
   },
   footer: {
     textAlign: "center",
-    color: "#6b7280",
-    fontSize: "0.9rem"
+    color: "#6b7280"
   },
   whatsappFloating: {
     position: "fixed",
