@@ -6,11 +6,9 @@ import {
   MessageCircle
 } from "lucide-react";
 
-const CALENDLY =
-  "https://calendly.com/connect-and-grow-with-srishti/30min";
-
+/* LINKS */
+const CALENDLY = "https://calendly.com/connect-and-grow-with-srishti/30min";
 const WHATSAPP_CHAT = "https://wa.me/919425379894";
-
 const WHATSAPP_CHANNEL =
   "https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W";
 
@@ -23,15 +21,10 @@ export default function App() {
 
         <p style={styles.subtitle}>
           CV writing, LinkedIn branding, mock interviews and personalized career
-          paths for students and professionals
+          plans for students and professionals
         </p>
 
-        {/* ✅ BOOK STRATEGY CALL */}
-        <a
-          href={CALENDLY}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={CALENDLY} target="_blank" rel="noreferrer">
           <button style={styles.buttonPrimary}>
             Book a Free Strategy Call
           </button>
@@ -41,50 +34,64 @@ export default function App() {
           30‑minute discovery call • No obligation
         </p>
 
-        {/* ✅ WHATSAPP CHANNEL */}
         <a
           href={WHATSAPP_CHANNEL}
           target="_blank"
           rel="noreferrer"
           style={styles.whatsappChannel}
         >
-          <MessageCircle size={22} />
+          <MessageCircle size={20} />
           Join my FREE WhatsApp channel →
         </a>
       </header>
 
       {/* TARGET AUDIENCE */}
       <section style={styles.grid}>
-        <AudienceCard
-          title="School Students"
-          icon={<GraduationCap />}
+        <AudienceCard title="School Students" icon={<GraduationCap />} />
+        <AudienceCard title="College Students" icon={<Cpu />} />
+        <AudienceCard title="Early Professionals" icon={<Briefcase />} />
+        <AudienceCard title="Mid‑Career Professionals" icon={<Users />} />
+      </section>
+
+      {/* SERVICES */}
+      <section style={styles.grid}>
+        <ServiceCard
+          title="Professional CV Writing"
+          original="₹199 – ₹499"
+          offer="₹49"
         />
-        <AudienceCard
-          title="College Students"
-          icon={<Cpu />}
+
+        <ServiceCard
+          title="LinkedIn Profile Branding"
+          original="₹1,999 – ₹4,599"
+          offer="₹499"
         />
-        <AudienceCard
-          title="Early Professionals"
-          icon={<Briefcase />}
+
+        <ServiceCard
+          title="Mock Interview & Feedback"
+          original="₹1,499 – ₹2,499"
+          offer="₹499 – ₹999"
         />
-        <AudienceCard
-          title="Mid‑Career Professionals"
-          icon={<Users />}
+
+        <ServiceCard
+          title="⭐ Personalized Career Roadmap"
+          original="₹4,999 – ₹7,999"
+          offer="₹999 – ₹2,499"
+          highlight
+        />
+
+        <ServiceCard
+          title="1‑on‑1 Career Mentorship (Monthly)"
+          original="₹10,000 – ₹20,000"
+          offer="₹2,499 – ₹3,999"
         />
       </section>
 
       {/* CTA */}
       <section style={styles.cta}>
         <h2>Ready to Lead the Technical Frontier?</h2>
-
-        <a
-          href={CALENDLY}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button style={styles.buttonPrimary}>
-            Book Consultation
-          </button>
+        <a href={CALENDLY} target="_blank" rel="noreferrer">
+          <button style={styles.buttonPrimary}>Book Consultation</button>
         </a>
       </section>
 
@@ -93,7 +100,7 @@ export default function App() {
         © 2026 Grow with Srishti
       </footer>
 
-      {/* ✅ FLOATING WHATSAPP CHAT */}
+      {/* FLOATING WHATSAPP */}
       <a
         href={WHATSAPP_CHAT}
         target="_blank"
@@ -106,17 +113,13 @@ export default function App() {
   );
 }
 
-/* CARD COMPONENT */
+/* COMPONENTS */
+
 function AudienceCard({ title, icon }) {
   return (
-    <a
-      href={CALENDLY}
-      target="_blank"
-      rel="noreferrer"
-      style={styles.cardLink}
-    >
+    <a href={CALENDLY} target="_blank" rel="noreferrer" style={styles.cardLink}>
       <div style={styles.card}>
-        <div style={{ marginBottom: "0.5rem" }}>{icon}</div>
+        {icon}
         <h3>{title}</h3>
         <span style={styles.cardHint}>Book mentoring →</span>
       </div>
@@ -124,10 +127,35 @@ function AudienceCard({ title, icon }) {
   );
 }
 
+function ServiceCard({ title, original, offer, highlight }) {
+  return (
+    <a href={CALENDLY} target="_blank" rel="noreferrer" style={styles.cardLink}>
+      <div
+        style={{
+          ...styles.card,
+          border: highlight ? "2px solid #4f46e5" : styles.card.border
+        }}
+      >
+        <h3>{title}</h3>
+
+        <p style={styles.price}>
+          <span style={styles.originalPrice}>{original}</span>
+          <span style={styles.offerPrice}>{offer}</span>
+        </p>
+
+        <p style={styles.offerTag}>
+          {highlight ? "Most Popular · Launch Offer" : "Launch Offer"}
+        </p>
+      </div>
+    </a>
+  );
+}
+
 /* STYLES */
+
 const styles = {
   page: {
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "system-ui, sans-serif",
     padding: "2rem",
     maxWidth: "1100px",
     margin: "auto"
@@ -138,12 +166,11 @@ const styles = {
   },
   title: {
     fontSize: "2.8rem",
-    fontWeight: 800,
-    marginBottom: "1rem"
+    fontWeight: 800
   },
   subtitle: {
-    maxWidth: "720px",
-    margin: "0 auto 1.6rem",
+    margin: "1rem auto 1.5rem",
+    maxWidth: "700px",
     opacity: 0.9
   },
   buttonPrimary: {
@@ -162,15 +189,14 @@ const styles = {
     color: "#6b7280"
   },
   whatsappChannel: {
+    marginTop: "1.4rem",
     display: "inline-flex",
     alignItems: "center",
     gap: "0.6rem",
-    marginTop: "1.4rem",
     padding: "0.9rem 1.6rem",
     background: "#25D366",
     borderRadius: "999px",
     color: "white",
-    fontSize: "1rem",
     fontWeight: 700,
     textDecoration: "none"
   },
@@ -192,10 +218,29 @@ const styles = {
     cursor: "pointer"
   },
   cardHint: {
-    display: "block",
     marginTop: "0.4rem",
     fontSize: "0.85rem",
     color: "#4f46e5",
+    fontWeight: 600
+  },
+  price: {
+    margin: "0.6rem 0",
+    display: "flex",
+    justifyContent: "center",
+    gap: "0.6rem"
+  },
+  originalPrice: {
+    textDecoration: "line-through",
+    color: "#9ca3af",
+    fontSize: "0.9rem"
+  },
+  offerPrice: {
+    fontSize: "1.1rem",
+    fontWeight: 700
+  },
+  offerTag: {
+    fontSize: "0.75rem",
+    color: "#10b981",
     fontWeight: 600
   },
   cta: {
@@ -208,8 +253,7 @@ const styles = {
   },
   footer: {
     textAlign: "center",
-    color: "#6b7280",
-    fontSize: "0.9rem"
+    color: "#6b7280"
   },
   whatsappFloating: {
     position: "fixed",
