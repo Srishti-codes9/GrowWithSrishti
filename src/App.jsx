@@ -9,7 +9,7 @@ import {
 /* LINKS */
 // Note: Kept the Calendly URL as 'connect-and-grow-with-srishti' to prevent broken links.
 // Update this string if your Calendly handle has also changed to Ambition Academy.
-const CALENDLY = "https://calendly.com/connect-and-grow-with-srishti/30min";
+const CALENDLY = "https://calendly.com/ambition_academy/30min";
 const WHATSAPP_CHAT = "https://wa.me/919425379894";
 const WHATSAPP_CHANNEL =
   "https://whatsapp.com/channel/0029VbBvayr89inbGIsEod2W";
