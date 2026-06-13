@@ -7,6 +7,8 @@ import {
 } from "lucide-react";
 
 /* LINKS */
+// Note: Kept the Calendly URL as 'connect-and-grow-with-srishti' to prevent broken links.
+// Update this string if your Calendly handle has also changed to Ambition Academy.
 const CALENDLY = "https://calendly.com/connect-and-grow-with-srishti/30min";
 const WHATSAPP_CHAT = "https://wa.me/919425379894";
 const WHATSAPP_CHANNEL =
@@ -17,7 +19,7 @@ export default function App() {
     <div style={styles.page}>
       {/* HERO */}
       <header style={styles.header}>
-        <h1 style={styles.title}>Grow with Srishti</h1>
+        <h1 style={styles.title}>Ambition Academy</h1>
 
         <p style={styles.subtitle}>
           MBSD mentoring, CV writing, LinkedIn branding, mock interviews, and personalized career
@@ -87,7 +89,7 @@ export default function App() {
 
       {/* FOOTER */}
       <footer style={styles.footer}>
-        © 2026 Grow with Srishti
+        © 2026 Ambition Academy
       </footer>
 
       {/* FLOATING WHATSAPP */}
