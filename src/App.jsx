@@ -20,7 +20,7 @@ export default function App() {
         <h1 style={styles.title}>Grow with Srishti</h1>
 
         <p style={styles.subtitle}>
-          CV writing, LinkedIn branding, mock interviews and personalized career
+          MBSD mentoring, CV writing, LinkedIn branding, mock interviews, and personalized career
           plans for students and professionals
         </p>
 
@@ -57,33 +57,23 @@ export default function App() {
       <section style={styles.grid}>
         <ServiceCard
           title="Professional CV Writing"
-          original="₹199 – ₹499"
-          offer="₹49"
         />
 
         <ServiceCard
           title="LinkedIn Profile Branding"
-          original="₹1,999 – ₹4,599"
-          offer="₹499"
         />
 
         <ServiceCard
-          title="Mock Interview & Feedback"
-          original="₹1,499 – ₹2,499"
-          offer="₹499 – ₹999"
+          title="MBSD Mock Interview & Feedback"
         />
 
         <ServiceCard
           title="⭐ Personalized Career Roadmap"
-          original="₹4,999 – ₹7,999"
-          offer="₹999 – ₹2,499"
           highlight
         />
 
         <ServiceCard
           title="1‑on‑1 Career Mentorship (Monthly)"
-          original="₹10,000 – ₹20,000"
-          offer="₹2,499 – ₹3,999"
         />
       </section>
 
@@ -127,7 +117,7 @@ function AudienceCard({ title, icon }) {
   );
 }
 
-function ServiceCard({ title, original, offer, highlight }) {
+function ServiceCard({ title, highlight }) {
   return (
     <a href={CALENDLY} target="_blank" rel="noreferrer" style={styles.cardLink}>
       <div
@@ -137,15 +127,12 @@ function ServiceCard({ title, original, offer, highlight }) {
         }}
       >
         <h3>{title}</h3>
-
-        <p style={styles.price}>
-          <span style={styles.originalPrice}>{original}</span>
-          <span style={styles.offerPrice}>{offer}</span>
-        </p>
-
-        <p style={styles.offerTag}>
-          {highlight ? "Most Popular · Launch Offer" : "Launch Offer"}
-        </p>
+        
+        {highlight && (
+          <p style={styles.highlightTag}>
+            Most Popular
+          </p>
+        )}
       </div>
     </a>
   );
@@ -171,7 +158,8 @@ const styles = {
   subtitle: {
     margin: "1rem auto 1.5rem",
     maxWidth: "700px",
-    opacity: 0.9
+    opacity: 0.9,
+    lineHeight: "1.5"
   },
   buttonPrimary: {
     padding: "0.9rem 1.6rem",
@@ -215,7 +203,12 @@ const styles = {
     borderRadius: "16px",
     padding: "1.6rem",
     textAlign: "center",
-    cursor: "pointer"
+    cursor: "pointer",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "120px"
   },
   cardHint: {
     marginTop: "0.4rem",
@@ -223,25 +216,14 @@ const styles = {
     color: "#4f46e5",
     fontWeight: 600
   },
-  price: {
-    margin: "0.6rem 0",
-    display: "flex",
-    justifyContent: "center",
-    gap: "0.6rem"
-  },
-  originalPrice: {
-    textDecoration: "line-through",
-    color: "#9ca3af",
-    fontSize: "0.9rem"
-  },
-  offerPrice: {
-    fontSize: "1.1rem",
-    fontWeight: 700
-  },
-  offerTag: {
-    fontSize: "0.75rem",
-    color: "#10b981",
-    fontWeight: 600
+  highlightTag: {
+    marginTop: "0.8rem",
+    fontSize: "0.8rem",
+    color: "#4f46e5",
+    fontWeight: 700,
+    background: "#e0e7ff",
+    padding: "0.2rem 0.6rem",
+    borderRadius: "8px"
   },
   cta: {
     background: "linear-gradient(135deg,#1e3a8a,#4f46e5)",
